@@ -1,0 +1,14 @@
+version: v1
+managed:
+  enabled: true
+  optimize_for: CODE_SIZE
+
+plugins:
+  # This will invoke protoc-gen-es to generate .ts files
+  - plugin: es
+    opt: target=ts
+    out: lib/
+  # This will invoke protoc-gen-connect-es to generate services
+  - plugin: connect-es
+    opt: target=ts
+    out: lib/
